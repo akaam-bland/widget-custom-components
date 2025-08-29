@@ -16,6 +16,7 @@
         <div class="card-content">
           <h4><b>Dr. Jane Smith</b></h4>
           <p>Psychiatrist</p>
+          <button class="choose-doctor-button">Choose</button>
         </div>
       </div>
 
@@ -27,6 +28,7 @@
         <div class="card-content">
           <h4><b>Dr. John Doe</b></h4>
           <p>Cardiologist</p>
+          <button class="choose-doctor-button">Choose</button>
         </div>
       </div>
 
@@ -38,8 +40,19 @@
         <div class="card-content">
           <h4><b>Dr. Usman Yusouf</b></h4>
           <p>Cardiologist</p>
+          <button class="choose-doctor-button">Choose</button>
         </div>
       </div>
     </div>
   </body>
+  <script>
+    const buttons = document.querySelectorAll('.choose-doctor-button');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const card = button.closest('.card');
+        const doctorName = card.querySelector('h4').textContent.trim();
+        window.postMessage(`widget-message:${doctorName}`, '*');
+      });
+    });
+  </script>
 </html>
