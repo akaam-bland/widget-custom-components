@@ -8,13 +8,16 @@ body {
 
 .card-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
   gap: 20px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
 }
 
 .card {
+  flex: 0 0 auto;
   position: relative;
   width: 220px;
   height: 260px;
