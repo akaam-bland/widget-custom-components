@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <h2 id="greeting"></h2>
+
     <div class="card-container">
       <div class="card">
         <img
@@ -46,6 +48,16 @@
     </div>
   </body>
   <script>
+    // Use call variables
+    const params = new URLSearchParams(window.location.search);
+    const firstName = params.get("firstName");
+
+    if (firstName) {
+      document.getElementById("greeting").textContent =
+        `Doctors selected for you, ${firstName}`;
+    }
+
+    // Add widget interactions
     const buttons = document.querySelectorAll(".choose-doctor-button");
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
