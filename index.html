@@ -46,12 +46,12 @@
     </div>
   </body>
   <script>
-    const buttons = document.querySelectorAll('.choose-doctor-button');
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const card = button.closest('.card');
-        const doctorName = card.querySelector('h4').textContent.trim();
-        window.postMessage(`widget-message:${doctorName}`, '*');
+    const buttons = document.querySelectorAll(".choose-doctor-button");
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const card = button.closest(".card");
+        const doctorName = card.querySelector("h4").textContent.trim();
+        window.parent.postMessage(`widget-message:${doctorName}`, "*");
       });
     });
   </script>
