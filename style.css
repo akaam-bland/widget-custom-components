@@ -12,6 +12,7 @@ body {
   align-items: center;
   gap: 20px;
   overflow-x: auto;
+  overflow-y: clip;
   flex-wrap: nowrap;
 }
 
